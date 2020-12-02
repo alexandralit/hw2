@@ -73,7 +73,7 @@ if ( (a > 2 && a < 11) || (b >= 6 && b < 14) ) {
 
 let n = prompt('Введите число от 0 до 59:');
 
-if (n < 0 || n > 59) {
+if (n < 0 || n > 59 || n == null) {
     alert('Неверное число');
 } else if (n < 16) {
     alert('Первая четверть часа');
@@ -119,6 +119,12 @@ console.log('Количество дней', days);
 
 if (days < 1) {
     alert('Неверное число');
+} else if (days < 365 && days >= 31) {
+    alert('Меньше года');
+} else if (days < 31 && days >= 7) {
+    alert('Меньше месяца');
+} else if (days < 7) {
+    alert('Меньше недели');
 } else {
     years = days / 365;
     console.log('Количество лет', years);
